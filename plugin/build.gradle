@@ -28,7 +28,7 @@ dependencies {
     testCompile 'junit:junit:4.11'
 }
 
-group = 'no.nils'
+group = 'info.globalbus'
 version = '0.11-SNAPSHOT'
 
 uploadArchives {

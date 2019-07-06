@@ -11,6 +11,7 @@ class Wsdl2JavaPluginTest{
 	@Test
     public void canAddWsdlTaskToProject() {
         Project project = ProjectBuilder.builder().build()
+        project.apply plugin: 'java'
         def task = project.task('wsdl2java', type: Wsdl2JavaTask)
         assertTrue(task instanceof Wsdl2JavaTask)
     }
