@@ -29,7 +29,7 @@ dependencies {
 }
 
 group = 'info.globalbus'
-version = '0.12'
+version = '0.13'
 
 uploadArchives {
     repositories {

@@ -112,14 +112,7 @@ class Wsdl2JavaTask extends DefaultTask {
     }
 
     protected void deleteOutputFolders() {
-        Set<String> packagePaths = findPackagePaths()
-        if (packagePaths.isEmpty()) {
-            packagePaths.add("") // add root if no package paths
-        }
-
-        Set<File> packageTargetDirs = packagePaths.collect { subPath -> new File(ext.generatedWsdlDir, subPath) }
-        getLogger().info("Clear target folders {}", packageTargetDirs)
-        getProject().delete(packageTargetDirs)
+        ext.generatedWsdlDir.deleteDir()
     }
 
     private Set<String> findPackagePaths() {
