@@ -33,7 +33,7 @@ class Wsdl2JavaTask extends DefaultTask {
         }
         def settings = wsdlsToGenerate.flatten().findAll {
             v -> !(v instanceof File)
-        }.toSet()
+        }.collect { v -> v.toString() }
         settings.findAll { v ->
             if (new File(v.toString()).exists())
                 logger.error('{} \nLooks to be a file but it\'s not a File Object. This will break task caching!', v)

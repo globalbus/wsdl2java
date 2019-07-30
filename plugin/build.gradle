@@ -29,7 +29,7 @@ dependencies {
 }
 
 group = 'info.globalbus'
-version = '0.13'
+version = '0.14'
 
 uploadArchives {
     repositories {
@@ -50,6 +50,10 @@ artifacts {
     archives sourcesJar
 }
 
+tasks.withType(AbstractArchiveTask.class) {
+    preserveFileTimestamps = false
+    reproducibleFileOrder = true
+}
 publishing {
     publications {
         mavenStuff(MavenPublication) {
